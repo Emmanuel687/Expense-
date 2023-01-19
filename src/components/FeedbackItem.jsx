@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Shared/Card";
+import Card from "../Data/Shared/Card";
 import {FaTimes} from 'react-icons/fa'
 
 
