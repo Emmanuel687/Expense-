@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 
-function Button({ children, version,type, isDisabled }) {
+function Button({ children, version , type, isDisabled }) {
   return (
     <div>
       <button type={type} isDisabled={isDisabled} className={`btn btn-${version}`}>
