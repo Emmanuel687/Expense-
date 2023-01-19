@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function FeedbackForm() {
     const[text,setText]=useState(``);
+    
     const handleTextChange = (e)=>{
         setText(e.target.value)
 
@@ -15,7 +16,7 @@ export default function FeedbackForm() {
             <h2>How would rate your service with Us? </h2>
             {/* {rating component} */}
             <div className="input-group">
-                <input onChange={handleText} value={text} type="text" placeholder='Write a review'/>
+                <input onChange={handleTextChange} value={text} type="text" placeholder='Write a review'/>
                 <button type='submit'></button>
             </div>
         </form>
