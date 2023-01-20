@@ -1,7 +1,7 @@
 import React from "react";
 import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
-import { motion, AnimatePresence, animate } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback yet</p>;
