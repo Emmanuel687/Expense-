@@ -6,6 +6,7 @@ import FeedbackData from "./Data/FeedbackData";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPage";
+import  {FeedbackProvider} from './context/FeedbackContext'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
 
@@ -19,6 +20,7 @@ const App = () => {
     setFeedback([newFeedback, ...feedback])
   };
   return (
+    <FeedbackProvider>
     <div className="comments">
       <Header />
       <div className="container">
@@ -27,6 +29,8 @@ const App = () => {
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
     </div>
+    </FeedbackProvider>
+    
   );
 };
 export default App;
