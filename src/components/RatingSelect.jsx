@@ -1,11 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import FeedbackContext from "../context/FeedbackContext";
 
-function RatingSelect({select}) {
+function RatingSelect({ select }) {
   const [selected, setSelected] = useState(10);
+  const { feedbackEdit } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    setSelected(feedbackEdit.item.rating)
+  }, [feedbackEdit]);
+  
   const handleChange = (e) => {
-    setSelected(+e.currentTarget.value)
-    select(+e.currentTarget.value)
+    setSelected(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
   return (
     <ul className="rating">
@@ -14,7 +21,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num1"
           name="rating"
-          value='1'
+          value="1"
           onChange={handleChange}
           checked={selected === 1}
         />
@@ -26,7 +33,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num2"
           name="rating"
-          value='2'
+          value="2"
           onChange={handleChange}
           checked={selected === 2}
         />
@@ -38,7 +45,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num3"
           name="rating"
-          value='3'
+          value="3"
           onChange={handleChange}
           checked={selected === 3}
         />
@@ -50,7 +57,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num4"
           name="rating"
-          value='4'
+          value="4"
           onChange={handleChange}
           checked={selected === 4}
         />
@@ -62,7 +69,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num5"
           name="rating"
-          value='5'
+          value="5"
           onChange={handleChange}
           checked={selected === 5}
         />
@@ -74,7 +81,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num6"
           name="rating"
-          value='6'
+          value="6"
           onChange={handleChange}
           checked={selected === 6}
         />
@@ -86,7 +93,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num7"
           name="rating"
-          value='7'
+          value="7"
           onChange={handleChange}
           checked={selected === 7}
         />
@@ -98,7 +105,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num8"
           name="rating"
-          value='8'
+          value="8"
           onChange={handleChange}
           checked={selected === 8}
         />
@@ -110,7 +117,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num9"
           name="rating"
-          value='9'
+          value="9"
           onChange={handleChange}
           checked={selected === 9}
         />
@@ -122,7 +129,7 @@ function RatingSelect({select}) {
           type="radio"
           id="num10"
           name="rating"
-          value='10'
+          value="10"
           onChange={handleChange}
           checked={selected === 10}
         />
