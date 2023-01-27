@@ -19,11 +19,20 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false)
   }
   //Update Feedback Function
-  const updateFeedback = (id, updItem) => {
-    setFeedback(feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item)));
+  const updateFeedback = async (id, updItem) => {
+   const response= await fetch(`/feedback/${id}`,{
+    method:'PUT',
+    headers:{
+      'Content-Type':'application/json',
+    }, 
+    body:JSON.stringify(updItem)
+   })
+    const data = await response.json()
+    setFeedback(feedback.map((item) => (item.id === id ? { ...item, ...data } : item)));
   };
   // Delete Feedback Function
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async(id) => {
+    await fetch(`/feedback/${id}`,{method:'DELETE'})
     if (window.confirm(`Are sure you want to Delete`))
       setFeedback(feedback.filter((item) => item.id !== id));
   };
