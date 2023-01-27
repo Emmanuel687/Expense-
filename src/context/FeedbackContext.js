@@ -14,7 +14,7 @@ export const FeedbackProvider = ({ children }) => {
   useEffect(()=>{fetchFeedback()},[])
 
   const fetchFeedback = async()=>{
-    const response = await fetch('http://localhost:5000/feedback?_sort=id&_order=desc')
+    const response = await fetch('/feedback?_sort=id&_order=desc')
     const data = await response.json()
     setFeedback(data)
     setIsLoading(false)
