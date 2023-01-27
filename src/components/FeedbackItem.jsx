@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Data/Shared/Card";
+import Card from "./Shared/Card";
 import {FaTimes,FaEdit} from 'react-icons/fa';
 import { useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
