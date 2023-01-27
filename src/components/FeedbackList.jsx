@@ -10,7 +10,8 @@ function FeedbackList() {
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback yet</p>;
   }
-     return <div className="feedback-list">
+  
+   return <div className="feedback-list">
       <AnimatePresence>
         {feedback.map((item) => (
           <motion.div
@@ -24,7 +25,7 @@ function FeedbackList() {
         ))}
       </AnimatePresence>
     </div>
-  ;
+  
 }
 
 export default FeedbackList;
