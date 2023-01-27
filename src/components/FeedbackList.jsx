@@ -11,7 +11,8 @@ function FeedbackList() {
   if (!isLoading && (!feedback || feedback.length === 0)) {
     return <p>No Feedback yet</p>;
   }
-  
+  return isLoading ? ( <Spinner/>
+  ) : (
     <div className="feedback-list">
       <AnimatePresence>
         {feedback.map((item) => (
@@ -26,7 +27,7 @@ function FeedbackList() {
         ))}
       </AnimatePresence>
     </div>
-  ;
+  );
 }
 
 export default FeedbackList;
