@@ -1,35 +1,19 @@
 {
   "feedback": [
     {
-      "id": 3,
+      "id": 1,
       "rating": 10,
-      "text": "This is feedback 3 coming from the backend"
+      "text": "This is feedback item 1 coming from the backend"
     },
     {
-      "text": "This is a good item f",
-      "rating": 10,
-      "id": 7
+      "id": 2,
+      "rating": 8,
+      "text": "This is feedback item 2 coming from the backend"
     },
     {
-      "text": "eee",
-      "rating": 5,
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "text": "",
-      "rating": 9,
-      "id": 11
-    },
-    {
-      "text": "ss",
-      "rating": 9,
-      "id": 12
+      "text": "Updated all packages to latest",
+      "rating": 6,
+      "id": 4
     }
   ]
 }
