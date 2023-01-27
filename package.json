@@ -1,6 +1,7 @@
 {
   "name": "traversy",
-  "version": "0.1.0",
+  "version": "0.1.0", 
+  "homepage": "https://emmanuel687.github.io/Feedback-App",
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
@@ -19,12 +20,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
-    "dev":"concurrently \"npm run server\" \"npm start\""
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

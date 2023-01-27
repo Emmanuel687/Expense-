@@ -14,7 +14,6 @@ export const FeedbackProvider = ({ children }) => {
     fetchFeedback()
   }, [])
 
-  // Fetch feedback
   const fetchFeedback = async () => {
     const response = await fetch(`/feedback?_sort=id&_order=desc`)
     const data = await response.json()
@@ -23,7 +22,6 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false)
   }
 
-  // Add feedback
   const addFeedback = async (newFeedback) => {
     const response = await fetch('/feedback', {
       method: 'POST',
@@ -38,7 +36,6 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback([data, ...feedback])
   }
 
-  // Delete feedback
   const deleteFeedback = async (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
       await fetch(`/feedback/${id}`, { method: 'DELETE' })
@@ -47,7 +44,6 @@ export const FeedbackProvider = ({ children }) => {
     }
   }
 
-  // Update feedback item
   const updateFeedback = async (id, updItem) => {
     const response = await fetch(`/feedback/${id}`, {
       method: 'PUT',
@@ -59,11 +55,8 @@ export const FeedbackProvider = ({ children }) => {
 
     const data = await response.json()
 
-    // NOTE: no need to spread data and item
     setFeedback(feedback.map((item) => (item.id === id ? data : item)))
 
-    // FIX: this fixes being able to add a feedback after editing
-    // credit to Jose https://www.udemy.com/course/react-front-to-back-2022/learn/lecture/29768200#questions/16462688
     setFeedbackEdit({
       item: {},
       edit: false,
